@@ -1,0 +1,35 @@
+{
+  "name": "tree-ride",
+  "version": "1.0.0",
+  "description": "Simple library to manipulate tree data structure",
+  "main": "index.js",
+  "scripts": {
+    "test": "TZ=UTC jest",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch",
+    "coverage": "TZ=UTC jest --coverage",
+    "prepack": "yarn build",
+    "build": "rm -rf lib/ && yarn build:types && babel src --out-dir lib --ignore '**/*.test.ts' --extensions '.ts'",
+    "build:types": "tsc -p tsconfig.types.json",
+    "lint": "eslint . --cache --fix --ignore-path=.eslintignore"
+  },
+  "types": "./lib/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MariannaMilovanova/tree-ride.git"
+  },
+  "keywords": [
+    "tree",
+    "array-to-tree",
+    "build-tree",
+    "search-in-tree",
+    "flat-tree"
+  ],
+  "author": "Marianna Milovanova",
+  "license": "ISC",
+  "private": false,
+  "bugs": {
+    "url": "https://github.com/MariannaMilovanova/tree-ride/issues"
+  },
+  "homepage": "https://github.com/MariannaMilovanova/tree-ride#readme"
+}
